@@ -1,0 +1,44 @@
+@import '../vars';
+@import '../mixins';
+
+.content{
+    padding: 36px 20px;
+
+    &__title{
+        @include font(16px, 500, $font-color-default);
+        max-width: 335px;
+    }
+    &__cards{
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 600px) {
+    .content{
+        padding: 56px 44px;
+
+        &__title{
+            font-size: 24px;
+            max-width: 603px;
+        }
+        &__cards{
+            margin-top: 32px;
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .content{
+        padding: 56px 86px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content{
+        padding: 56px calc(50% - 560px);
+
+        &__title{
+            max-width: 100%;
+        }
+    }
+}

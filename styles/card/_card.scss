@@ -1,0 +1,116 @@
+@import '../vars';
+@import '../mixins';
+
+.card{
+    padding: 16px;
+    border-radius: 12px;
+    min-height: 194px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    &__heading{
+        @include font(16px, 500, $font-color-main);
+        line-height: 22px;
+        max-width: 214px;
+        margin-bottom: 8px;
+    }
+    &__info{
+        @include font(14px, 400, $font-color-main);
+        max-width: 284px;
+    }
+    &__button{
+        width: 148px;
+        border: 1px solid #fff;
+        background: none;
+        margin-top: auto;
+        transition: .3s;
+
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+    }
+}
+
+#card-1{
+    background: url('/images/xs/card-1-xs.png') bottom right 8px no-repeat, $card-background-default;
+}
+#card-2{
+    background: url('/images/xs/card-2-xs.png') bottom right 8px no-repeat, $card-background-default;
+}
+#card-3{
+    background: url('/images/xs/card-3-xs.png') bottom right 8px no-repeat, $card-background-default;
+}
+#card-4{
+    background: url('/images/xs/card-4-xs.png') bottom 2px right 8px no-repeat, $card-background-default;
+}
+
+@media (min-width: 600px) {
+    .card{
+        padding: 32px;
+        min-height: 233px;
+
+        &__heading{
+            font-size: 18px;
+            max-width: 338px;
+        }
+        &__info{
+            max-width: 306px;
+        }
+    }
+    #card-1{
+        background: url('/images/s/card-1-s.png') bottom right 8px no-repeat, $card-background-default;
+    }
+    #card-2{
+        background: url('/images/s/card-2-s.png') bottom right 8px no-repeat, $card-background-default;
+    }
+    #card-3{
+        background: url('/images/s/card-3-s.png') bottom right 8px no-repeat, $card-background-default;
+    }
+    #card-4{
+        background: url('/images/s/card-4-s.png') bottom 2px right 8px no-repeat, $card-background-default;
+        
+    }
+}
+
+@media (min-width: 900px) {
+    #card-1{
+        background: url('/images/m/card-1-m.png') bottom right 8px no-repeat, $card-background-default;
+    }
+    #card-2{
+        background: url('/images/m/card-2-m.png') bottom right 8px no-repeat, $card-background-default;
+    }
+    #card-3{
+        background: url('/images/m/card-3-m.png') bottom right 8px no-repeat, $card-background-default;
+    }
+    #card-4{
+        background: url('/images/m/card-4-m.png') bottom 2px right 8px no-repeat, $card-background-default;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card{
+        &__button{
+            margin-top: 32px;
+        }
+    }
+    #card-1{
+        grid-column: 1;
+        grid-row: 1/3;
+        background: url('/images/l/card-1-l.png') bottom right 8px no-repeat, $card-background-default;
+    }
+    #card-2{
+        grid-column: 2/3;
+        background: url('/images/l/card-2-l.png') bottom right no-repeat, $card-background-default;
+    }
+    #card-3{
+        grid-column: 2/3;
+        background: url('/images/l/card-3-l.png') bottom right 8px no-repeat, $card-background-default;
+    }
+    #card-4{
+        grid-column: 3;
+        grid-row: 1/3;
+        background: url('/images/l/card-4-l.png') bottom 2px right 8px no-repeat, $card-background-default;
+        background-size: contain;
+    }
+}

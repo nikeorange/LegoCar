@@ -1,0 +1,127 @@
+@import '../vars';
+@import '../mixins';
+
+.menu{
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    position: relative;
+    
+    &__burger-button{
+        border: none;
+        background: none;
+        padding: 0;
+        width: 27px;
+        height: 27px;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__close-button{
+        width: 27px;
+        height: 27px;
+        padding: 0;
+        border: none;
+        background: none;
+        margin-left: auto;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__button{
+        visibility: hidden;
+        opacity: 0;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: -220px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: white;
+    }
+    &__item{
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+    }
+    &__link{
+        @include font(12px, 400, $font-color-sub);
+        transition: .3s;
+
+        &:hover{
+            color: $font-color-default;
+        }
+    }
+    &__element_hidden{
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+    .menu{
+        padding: 20px 44px;
+
+        &__close-button{
+            margin-left: 32px;
+        }
+        &__burger-button{
+            margin-left: 32px;
+        }
+        &__button{
+            visibility: visible;
+            opacity: 1;
+            display: flex;
+            margin-left: auto;
+            padding: 10px 40px;
+            border-radius: 12px;
+            transition: .3s;
+
+            &:hover{
+                background-color: $button-background-hover;
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .menu{
+        padding: 20px 86px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .menu{
+        padding: 20px calc(50% - 560px);
+        
+        &__button{
+            margin-left: 0;
+        }
+        &__burger-button{
+            display: none;
+        }
+        &__list{
+            display: flex;
+            position: static;
+            transform: translate(0);
+            width: max-content;
+            background-color: none;
+            flex-direction: row;
+            margin-left: auto;
+            margin-right: 56px;
+        }
+        &__item{
+            padding: 0;
+        }
+        &__item:not(:last-of-type){
+            margin: 0 32px 0 0;
+        }
+    }
+}
